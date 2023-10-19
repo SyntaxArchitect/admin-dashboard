@@ -28,7 +28,7 @@ const LoginForm = (props) => {
             <div className="">
                 <h1 className="w-[8.9375rem] h-12 text-black font-['Montserrat'] text-4xl font-bold ">Sign In</h1>
                 <h6 className="w-44 h-5 text-black font-['Lato'] ">Sign in to your account</h6>
-                <div className="flex w-[23.7rem] justify-between">
+                <div className="flex w-[22.25rem] justify-between">
 
                     <div className="flex hover:cursor-pointer rounded-[0.625rem] bg-neutral-100 placeholder-blueGray-300 text-blueGray-600 relative text-sm border-0 shadow outline-none focus:outline-none focus:ring py-4 px-2">
                         <svg width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -92,7 +92,7 @@ const LoginForm = (props) => {
                         />
                     </div>
                     {!!errorMessage.error && <p className="text-red-500 text-xs font-['Lato']">Authentication failed</p>}
-                    <div className="flex justify-center items-center w-[23.7rem] h-[2.6875rem] my-5 ">
+                    <div className="flex justify-center items-center w-[22.25rem] h-[2.6875rem] my-5 ">
                         <button
                             id="sign-button"
                             className="w-full h-[2.6875rem] rounded-[0.625rem] bg-[#4285f4] border-0 hover:cursor-pointer"

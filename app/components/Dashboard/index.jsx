@@ -12,7 +12,7 @@ const Dashboard = () => {
     const [isCardHidden, setCardHidden] = useState(true);
     const [isOpen, setIsOpen] = useState(true);
     const { data, status } = useSession();
-    
+
     if (status === 'unauthenticated') {
         setTimeout(function () {
             window.location.href = '/';
@@ -45,7 +45,7 @@ const Dashboard = () => {
                     >
                         <path fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5" d="m8.464 15.535l7.072-7.07m-7.072 0l7.072 7.07" />
                     </svg>
-                    <h2 className=" text-[2.25rem] mt-6">Board.</h2>
+                    <h2 className=" text-[2rem] mt-6 font-bold">Board.</h2>
                     <div className="flex flex-col mt-10">
                         <Link href='#' className="flex items-center no-underline hover:bg-blue-600 transition duration-300 mr-10 p-3 rounded-xl">
                             <img className=" " alt="" src="dashboard_icon.svg" />
