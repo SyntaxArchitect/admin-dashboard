@@ -20,7 +20,7 @@ const LoginForm = (props) => {
             email: userName.current,
             password: password.current,
             redirect: true,
-            callbackUrl: "http://localhost:3000/dashboard"
+            callbackUrl: "https://admin-dashboard-next-auth.vercel.app/dashboard"
         })
     }
     return (
@@ -47,7 +47,7 @@ const LoginForm = (props) => {
                         <div
                             className="flex flex-col flex-shrink-0 justify-center w-[8.0625rem] h-4 text-[#858585]  font-['Montserrat'] text-xs  hover:cursor-pointer ml-2 "
                             type="button"
-                            onClick={() => signIn('google', { callbackUrl: "http://localhost:3000/dashboard" })}
+                            onClick={() => signIn('google', { callbackUrl: "https://admin-dashboard-next-auth.vercel.app/dashboard" })}
                         >
                             Sign in with Google
                         </div>

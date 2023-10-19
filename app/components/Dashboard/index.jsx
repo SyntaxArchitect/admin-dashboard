@@ -141,7 +141,7 @@ const Dashboard = () => {
                                             <Link
                                                 href="#"
                                                 className="text-white text-sm p-2 no-underline"
-                                                onClick={() => signOut({ callbackUrl: "http://localhost:3000/" })}
+                                                onClick={() => signOut({ callbackUrl: "https://admin-dashboard-next-auth.vercel.app/" })}
                                             >
                                                 Log Out
                                             </Link>
