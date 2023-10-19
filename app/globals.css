@@ -1,27 +1,157 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Navbar Section */
+
+.display-picture img {
+  border: 2px solid #fff;
+}
+.display-picture img:hover {
+  border: 2px solid #e78341;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.card ul li {
+  padding: 5px 0;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* Charts Custom Styles */
+.apexcharts-toolbar {
+  display: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+.topproducts .doughnut {
+  top: -30px;
+}
+
+#dashboard,
+.dashboard,
+#dashboard-closed,
+.dashboard-closed,
+#sidebar,
+.sidebar,
+#sidebar-closed,
+.sidebar-closed {
+  transition: ease-in-out 0.5s;
+}
+.closs-icon {
+  display: none;
+}
+.hamburger-icon {
+  display: none;
+}
+@media (max-width: 1280px) {
+  .hamburger-icon {
+    display: block;
+  }
+  #sidebar-closed {
+    margin-left: -25rem;
+  }
+  #dashboard {
+    margin-left: 0;
+  }
+
+  #sidebar {
+    margin: 0;
+  }
+  #dashboard-closed {
+    margin-left: 18rem;
+
+    #hero-section {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .hamburger-icon {
+      display: none;
+    }
+  }
+  .closs-icon {
+    display: block;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@media (max-width: 810px) {
+  #dashboard-closed {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  #sidebar {
+    z-index: 100;
+  }
+}
+
+@media (max-width: 610px) {
+  .searchbox {
+    display: none;
+  }
+  .bell-icon {
+    display: none;
+  }
+  #dashboard-closed {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  #sidebar {
+    z-index: 100;
+  }
+}
+
+@media (max-width: 930px) {
+  #sign-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    #board {
+      position: absolute;
+      top: 0;
+      text-align: center;
+      margin-top: 30px;
+    }
+  }
+  #sign-right {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    #sign-button {
+      background: #fff;
+    }
+    #sign-buttonT {
+      color: #3b82f6;
+    }
+  }
+
+  #forgot,
+  #register,
+  #register > a {
+    color: #fff;
+  }
 }
