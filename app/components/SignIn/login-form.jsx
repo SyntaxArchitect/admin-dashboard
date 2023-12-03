@@ -1,11 +1,13 @@
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { signIn, useSession } from "next-auth/react";
 import { redirect } from 'next/navigation'
 
 const LoginForm = (props) => {
-    const userName = useRef('');
-    const password = useRef('');
+    // const userName = useRef('');
+    // const password = useRef('');
+    const [userName, setUserName] = useState('john@test.com');
+    const [password, setPassword] = useState('123456');
     const errorMessage = props.error;
     const { data } = useSession();
 
@@ -17,8 +19,8 @@ const LoginForm = (props) => {
 
     const handleLogin = async () => {
         await signIn("credentials", {
-            email: userName.current,
-            password: password.current,
+            email: userName,
+            password: password,
             redirect: true,
             callbackUrl: "https://admin-dashboard-next-auth.vercel.app/dashboard"
         })
@@ -77,8 +79,9 @@ const LoginForm = (props) => {
                             className="w-[22.25rem] h-[2.6875rem] rounded-[0.625rem] bg-neutral-100 px-3 placeholder-blueGray-300 text-blueGray-600 relative text-sm border-0 shadow outline-none focus:outline-none focus:ring"
                             name="email"
                             type="email"
+                            value={userName}
                             placeholder="Enter your email"
-                            onChange={(e) => (userName.current = e.target.value)}
+                            onChange={(e) => setUserName(e.target.value)}
                         />
                     </div>
                     <label className="text-black font-['Lato']">Password</label>
@@ -87,8 +90,9 @@ const LoginForm = (props) => {
                             className="w-[22.25rem] h-[2.6875rem] rounded-[0.625rem] bg-neutral-100 px-3 placeholder-blueGray-300 text-blueGray-600 relative text-sm border-0 shadow outline-none focus:outline-none focus:ring"
                             name="password"
                             type="password"
+                            value={password}
                             placeholder="Enter your password"
-                            onChange={(e) => (password.current = e.target.value)}
+                            onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
                     {!!errorMessage.error && <p className="text-red-500 text-xs font-['Lato']">Authentication failed</p>}
